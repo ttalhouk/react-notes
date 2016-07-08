@@ -75,3 +75,63 @@ class StoryBox extends React.Component { // inherits from react base
     ); // what will be rendered using JSX
   }
 }
+
+// Props
+// HTML Mockup
+// comment container compoent
+<div class="comment-box">
+  <h3>Comments</h3>
+  <h4 class="comment-count">2 comments</h4>
+  <div class='comment-list'>
+  // comment component
+    <div class='comment'>
+      <p class="comment-header">Anne Droid</p>
+      <p class="comment-body">
+        I wanna know what love is...
+      </p>
+      <div class="comment-footer">
+        <a hres="#" class="comment-footer-delete">
+          Delete Comment
+        </a>
+      </div>
+    </div>
+  //
+  </div>
+</div>
+
+// comment component conversion
+class Comment extends React.Component {
+  render(){
+    return(
+      <div className='comment'>
+      <p className="comment-header">Anne Droid</p>
+      <p className="comment-body">
+        I wanna know what love is...
+      </p>
+      <div className="comment-footer">
+        <a hres="#" className="comment-footer-delete">
+          Delete Comment
+        </a>
+      </div>
+    </div>
+  )}
+}
+
+// Comment Box converison
+class CommentBox extends React.Component {
+  render(){
+    return(
+      <div className="comment-box">
+        <h3>Comments</h3>
+        <h4 className="comment-count">2 comments</h4>
+        <div className='comment-list'>
+        // comment component
+          <Comment
+            author="Morgan McCirciut", body="cool stuff" /> // arguments to comment
+          <Comment
+            author="Bending Bender", body="neeto!" />
+        //
+        </div>
+      </div>
+  )}
+}
